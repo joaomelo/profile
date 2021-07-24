@@ -1,2 +1,1 @@
-# profile
-simple personal profile web page
+this is a simple personal profile web page
