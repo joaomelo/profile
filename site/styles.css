@@ -1,6 +1,6 @@
 :root {
-  --primary: 0, 31, 63;
-  --accent: 183, 50, 37;
+  --primary: 183, 50, 37;
+  --secondary: 0, 31, 63;
 }
 
 html, body, p, h1, h2 {
@@ -10,7 +10,7 @@ html, body, p, h1, h2 {
 
 body {
   font-family: 'Roboto';
-  color: rgb(var(--primary));
+  color: rgb(var(--secondary));
 }
 
 .container {
@@ -20,16 +20,16 @@ body {
   position: relative;
   height: 100vh;
   width: 100%;
-  background-image: url(./bg.png);
+  background-image: url(./background.png);
 }
 
 .container::before {
   content: '';
   background: linear-gradient(
     0, 
-    rgba(var(--primary),0.97) 25%, 
-    rgba(var(--accent),0.99) 50%, 
-    rgba(var(--primary),0.97) 75%);
+    rgba(var(--secondary),0.97) 25%, 
+    rgba(var(--primary),0.99) 50%, 
+    rgba(var(--secondary),0.97) 75%);
   position: absolute;
   top: 0px;
   left: 0px;
@@ -45,16 +45,16 @@ body {
   justify-content: center;
   align-items: center;
   padding: 32px;
-  margin: 8px;
+  margin: 32px;
   gap: 32px;
   border-radius: 8px;
   background-color: white;
-  box-shadow: 4px 4px 16px 0 rgba(0,0,0,0.3);
+  box-shadow: 8px 8px 32px 0 rgba(0,0,0,0.5);
 }
 
 .photo {
   border-radius: 50%;
-  box-shadow: 0px 0px 0px 4px rgba(var(--accent),0.2);
+  box-shadow: 0px 0px 0px 4px rgba(var(--primary),0.2);
 }
 
 h1, h2 {
@@ -72,7 +72,7 @@ h2 {
 }
 
 .name {
-  color: rgb(var(--accent));
+  color: rgb(var(--primary));
 }
 
 .social-links{
@@ -84,9 +84,5 @@ h2 {
 
 .social-link {
   width: 2rem;
-  fill: rgb(var(--accent));
+  fill: rgb(var(--primary));
 }
-/* a { 
-  color: rgb(var(--accent));
-  text-decoration: none;
-} */

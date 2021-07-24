@@ -1,1 +1,1 @@
-this is a simple personal profile web page
+This is a simple profile personal web page.
