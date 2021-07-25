@@ -8,6 +8,10 @@ html, body, p, h1, h2 {
   margin: 0;
 }
 
+html {
+  overflow: hidden;
+}
+
 body {
   font-family: 'Roboto';
   color: rgb(var(--secondary));
