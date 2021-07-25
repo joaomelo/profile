@@ -85,4 +85,11 @@ h2 {
 .social-link {
   width: 2rem;
   fill: rgb(var(--primary));
+  transition: all 500ms;
+}
+
+.social-link:hover {
+  fill: rgb(var(--secondary));
+  transform: scale(1.5);
+  transition: all 250ms;
 }
