@@ -1,0 +1,17 @@
+{
+  "name": "profile",
+  "version": "1.0.0",
+  "description": "simple profile personal web page",
+  "scripts": {
+    "start": "vite src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaomelo/profile.git"
+  },
+  "author": "joão melo <j@melo.plus> (https://joao.melo.plus)",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "vite": "^2.9.12"
+  }
+}
