@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "simple profile personal web page",
   "scripts": {
-    "start": "vite src/index.html"
+    "start": "vite"
   },
   "repository": {
     "type": "git",
