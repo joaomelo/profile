@@ -49,7 +49,9 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+ul,
+li {
   padding: 0;
   margin: 0;
   border: 0;
@@ -57,7 +59,15 @@ h6 {
 
 html {
   font-family: "Roboto";
-  color: rgb(var(--color-5));
+  color: rgb(var(--color-6));
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+  text-decoration: none;
 }
 
 h1 {
@@ -66,13 +76,19 @@ h1 {
 }
 
 h2 {
-  font-size: var(--font-size-6);
+  font-size: var(--font-size-5);
   font-weight: var(--font-weight-2);
 }
 
-p {
+p,
+ul,
+li {
   font-size: var(--font-size-3);
   font-weight: var(--font-weight-1);
+}
+
+ul {
+  list-style-position: inside;
 }
 
 /* styles */
@@ -99,6 +115,7 @@ header {
   column-gap: var(--size-1);
   row-gap: var(--size-2);
   text-align: end;
+  padding-block-start: var(--size-2);
 }
 
 header .photo {
@@ -120,6 +137,15 @@ header img {
   border-radius: 50%;
 }
 
+header .moto h1 {
+  margin-block-end: var(--size-1);
+  color: rgb(var(--color-5));
+
+  & .name {
+    color: rgb(var(--color-7));
+  }
+}
+
 header .social {
   display: flex;
   justify-content: center;
@@ -139,24 +165,40 @@ header .social-link:hover {
   transition: all 250ms;
 }
 
-/* utils */
-
-.color-7 {
-  color: rgb(var(--color-7));
+section {
+  margin-block-start: var(--size-3);
 }
 
-.color-6 {
-  color: rgb(var(--color-6));
+section {
+  & p {
+    text-align: justify;
+  }
 }
 
-.color-5 {
-  color: rgb(var(--color-5));
-}
-
-.mbe-10 {
+.period {
+  font-size: var(--font-size-2);
   margin-block-end: var(--size-1);
 }
 
-.p-2 {
-  padding: var(--size-2);
+/* print */
+
+@media print {
+  body {
+    max-width: none;
+  }
+
+  header .social {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  svg,
+  .photo {
+    display: none;
+  }
+
+  header a::after {
+    content: attr(href);
+  }
 }
