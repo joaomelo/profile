@@ -20,7 +20,7 @@
   --size-8: 256px;
   --size-9: 512px;
 
-  --font-size-1: 12px;
+  --font-size-1: 14px;
   --font-size-2: 16px;
   --font-size-3: 20px;
   --font-size-4: 24px;
@@ -57,11 +57,6 @@ li {
   border: 0;
 }
 
-html {
-  font-family: "Roboto";
-  color: rgb(var(--color-6));
-}
-
 a,
 a:visited,
 a:hover,
@@ -70,41 +65,23 @@ a:active {
   text-decoration: none;
 }
 
-h1 {
-  font-size: var(--font-size-6);
-  font-weight: var(--font-weight-3);
-}
-
-h2 {
-  font-size: var(--font-size-5);
-  font-weight: var(--font-weight-2);
-}
-
-p,
-ul,
-li {
-  font-size: var(--font-size-3);
-  font-weight: var(--font-weight-1);
-}
-
-ul {
-  list-style-position: inside;
-}
-
 /* styles */
 
-html,
-body {
-  min-height: 100vh;
-}
-
 html {
+  font-family: "Roboto";
+  color: rgb(var(--color-6));
   background-color: rgb(var(--color-1));
+  padding-block-end: var(--size-5);
 }
 
 body {
   max-width: min(90%, var(--size-9));
   margin: auto;
+}
+
+p {
+  font-weight: var(--font-weight-1);
+  font-size: var(--font-size-3);
 }
 
 header {
@@ -120,64 +97,79 @@ header {
 
 header .photo {
   grid-area: a;
+
+  & img {
+    display: block;
+    width: 100%;
+    margin: auto;
+    border-radius: 50%;
+  }
 }
 
 header .moto {
   grid-area: b;
+
+  & h1 {
+    margin-block-end: var(--size-1);
+    color: rgb(var(--color-5));
+
+    & .name {
+      color: rgb(var(--color-7));
+    }
+  }
 }
 
 header .social {
   grid-area: c;
-}
-
-header img {
-  display: block;
-  width: 100%;
-  margin: auto;
-  border-radius: 50%;
-}
-
-header .moto h1 {
-  margin-block-end: var(--size-1);
-  color: rgb(var(--color-5));
-
-  & .name {
-    color: rgb(var(--color-7));
-  }
-}
-
-header .social {
   display: flex;
   justify-content: center;
   gap: var(--size-4);
   width: 100%;
-}
 
-header .social-link {
-  width: var(--size-4);
-  fill: rgb(var(--color-7));
-  transition: all 500ms;
-}
+  & svg {
+    width: var(--size-4);
+    fill: rgb(var(--color-7));
+    transition: all 500ms;
+  }
 
-header .social-link:hover {
-  fill: rgb(var(--color-5));
-  transform: scale(1.5);
-  transition: all 250ms;
-}
+  & svg:hover {
+    fill: rgb(var(--color-5));
+    transform: scale(1.5);
+    transition: all 250ms;
+  }
 
-section {
-  margin-block-start: var(--size-3);
-}
-
-section {
-  & p {
-    text-align: justify;
+  & .self {
+    display: none;
   }
 }
 
-.period {
+section h1 {
+  margin-block-start: var(--size-4);
+  font-size: var(--size-5);
+  font-weight: var(--font-weight-3);
+}
+
+section h2 {
+  margin-block-start: var(--size-0);
+  font-size: var(--size-3);
+  font-weight: var(--font-weight-2);
+}
+
+section .description {
+  margin-block-start: var(--size-0);
+  font-weight: var(--font-weight-1);
   font-size: var(--font-size-2);
-  margin-block-end: var(--size-1);
+  text-align: justify;
+}
+
+section .split {
+  margin-block-start: var(--size-0);
+  font-size: var(--font-size-1);
+  font-weight: var(--font-weight-2);
+}
+
+section .period {
+  font-size: var(--font-size-1);
 }
 
 /* print */
@@ -191,6 +183,10 @@ section {
     display: flex;
     flex-direction: column;
     gap: 0;
+
+    .self {
+      display: revert;
+    }
   }
 
   svg,
@@ -200,5 +196,9 @@ section {
 
   header a::after {
     content: attr(href);
+  }
+
+  section.secondary {
+    display: none;
   }
 }
