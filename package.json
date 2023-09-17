@@ -12,6 +12,8 @@
   "author": "joão melo <j@melo.plus> (https://joao.melo.plus)",
   "license": "GPL-3.0",
   "devDependencies": {
+    "firebase": "^10.4.0",
+    "firebase-tools": "^12.5.4",
     "vite": "^2.9.12"
   }
 }

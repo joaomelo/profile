@@ -5,19 +5,14 @@ on:
     branches:
       - "main"
 
-jobs:  
+jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-      FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-      FIREBASE_PROJECT: ${{ secrets.FIREBASE_PROJECT }} 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          ref: main
-      - uses: "actions/setup-node@v2"
-        with:
-          node-version: '14'
-      - run: npm install -g firebase-tools@9.12.1          
-      - run: firebase use --add $FIREBASE_PROJECT
-      - run: firebase deploy
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_PROFILE_C105E }}"
+          channelId: live
+          projectId: profile-c105e
