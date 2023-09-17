@@ -189,15 +189,12 @@ section .period {
   }
 
   svg,
-  .photo {
+  .photo,
+  .no-print {
     display: none;
   }
 
   header a::after {
     content: attr(href);
-  }
-
-  section.secondary {
-    display: none;
   }
 }
